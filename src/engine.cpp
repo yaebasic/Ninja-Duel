@@ -4,6 +4,8 @@
 
 void Engine::run()
 {
+    images.extract();
+
     while(step())
     {
         draw();
@@ -12,6 +14,7 @@ void Engine::run()
 
 bool Engine::quit()
 {
+    // currently set to just pressing clear
     return input.getKey(KEY_CLEAR);
 }
 
@@ -19,11 +22,14 @@ bool Engine::step()
 {
     input.poll();
     
-    // check if user invoked quit
     return !quit();
 }
 
 void Engine::draw()
 {
+    // example filler
+    gfx_FillScreen(0);
+    gfx_RLETSprite_NoClip(images.getSprite(2), 100, 100);
+    
     gfx_SwapDraw();
 }

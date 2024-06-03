@@ -4,14 +4,9 @@
             "name": "Linux",
             "includePath": [
                 "${workspaceFolder}/**",
-
-                // find toolchain libraries
                 "~/CEdev/include/**"
             ],
-            "defines": [],
-
-            // query compiler to determine include paths and default defines
-            "compilerPath": "~/CEdev/bin/ez80-clang"
+            "defines": []
         }
     ],
     "version": 4

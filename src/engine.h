@@ -1,24 +1,31 @@
 #pragma once
 
+#include "images.h"
 #include "input.h"
 
-/**
- * Game Engine Class
-*/
 class Engine
 {
 
 public:
 
+    // runs game container
     void run();
-
-    bool quit();
 
 private:
 
+    // game loop logic
     bool step();
+
+    // game loop rendeirng
     void draw();
 
-    Input input;
+    // checks if user has invoked quit
+    bool quit();
 
+    // image (sprites) handler
+    Images images;
+
+    // input handler
+    Input input;
+    
 };

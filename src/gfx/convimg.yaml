@@ -1,0 +1,24 @@
+palettes:
+  - name: palette
+    fixed-entries:
+      - color: { index: 0, hex: "#ffffff" }
+    images: automatic
+
+converts:
+  - name: sprites
+    palette: palette
+    style: rlet
+    images:
+      - idle_00.png
+      - idle_01.png
+      - idle_02.png
+
+outputs:
+  - type: appvar
+    name: NinjImg
+    directory: ../../bin
+    lut-entries: true
+    palettes:
+      - palette
+    converts:
+      - sprites

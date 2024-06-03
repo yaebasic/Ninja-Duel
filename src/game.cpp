@@ -4,18 +4,21 @@
 #include <graphx.h>
 #include <keypadc.h>
 
+#include <debug.h>
+
 void Game::start()
 {
     Engine engine;
 
-    begin();
+    init();
 
     engine.run();
 
-    end();
+    clean();
+
 }
 
-void Game::begin()
+void Game::init()
 {
     // setup graphics routine
     gfx_Begin();
@@ -26,7 +29,7 @@ void Game::begin()
     kb_SetMode(MODE_3_CONTINUOUS);
 }
 
-void Game::end()
+void Game::clean()
 {
     // end graphics routine
     gfx_End();

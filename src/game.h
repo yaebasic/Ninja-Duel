@@ -8,11 +8,15 @@ class Game
 
 public:
 
+    // starts Game container
     void start();
 
 private:
 
-    void begin();
-    void end();
+    // start-of-program initialization
+    void init();
+
+    // end-of-program cleanup
+    void clean();
 
 };
