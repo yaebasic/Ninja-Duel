@@ -16,4 +16,4 @@ The following files will be created and should be sent to the calculator:
 `bin/NinjImg.8xv`: Image data
    
 ## Run
-From the homescreen of the calculator, run ```Asm(prgmNinjDuel)```.
+From the homescreen of the calculator, run ```Asm(prgmNINJDUEL)```.

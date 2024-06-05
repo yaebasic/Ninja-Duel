@@ -2,6 +2,7 @@
 
 #include "defines.h"
 
+// enumeration used to access individual keys
 enum Keys
 {
     KEY_UP,
@@ -15,7 +16,7 @@ enum Keys
     KEY_CLEAR,
 
     // avoid a separate #define
-    KEY_CNT
+    KEY_COUNT
 };
 
 class Input
@@ -27,14 +28,12 @@ public:
     void poll();
 
     // given `key` parameter
-    // \returns
-    // `0` if not pressed and
-    // `1` if pressed
-    bool getKey(enum Keys key);
+    // \returns `0` if not pressed and `1` if pressed
+    bool getKey(enum Keys key) const;
 
 private:
 
     // stores key states as either on (is pressed) or off (is not pressed)
-    bool keys[KEY_CNT] = { false };
+    bool m_keys[KEY_COUNT] = { false };
 
 };

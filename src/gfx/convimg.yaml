@@ -1,5 +1,6 @@
 palettes:
   - name: palette
+    max-entries: 255 # u8 compatibility
     fixed-entries:
       - color: { index: 0, hex: "#ffffff" }
     images: automatic
@@ -11,7 +12,10 @@ converts:
     images:
       - idle_00.png
       - idle_01.png
-      - idle_02.png
+      - lpunch_00.png
+      - lpunch_01.png
+      - rpunch_00.png
+      - rpunch_01.png
 
 outputs:
   - type: appvar

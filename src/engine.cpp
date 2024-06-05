@@ -4,32 +4,40 @@
 
 void Engine::run()
 {
-    images.extract();
-
     while(step())
     {
         draw();
-    }
+        limitFps();
+    }    
 }
 
-bool Engine::quit()
+bool Engine::step() 
 {
-    // currently set to just pressing clear
-    return input.getKey(KEY_CLEAR);
-}
+    m_input.poll();
 
-bool Engine::step()
-{
-    input.poll();
+    m_animation.update();
     
     return !quit();
 }
 
-void Engine::draw()
+void Engine::draw() const
 {
-    // example filler
-    gfx_FillScreen(0);
-    gfx_RLETSprite_NoClip(images.getSprite(2), 100, 100);
+    gfx_FillScreen(COLOR_WHITE);
+
+    gfx_RLETSprite_NoClip(m_images.getSprite(m_animation.getAnimationIndex()),
+        100, 100);
     
     gfx_SwapDraw();
+}
+
+bool Engine::quit() const
+{
+    // currently set to just pressing clear
+    return m_input.getKey(KEY_CLEAR);
+}
+
+void Engine::limitFps()
+{
+    while(clock() - m_last_clock < CLOCKS_PER_SEC / 4);
+    m_last_clock = clock();
 }

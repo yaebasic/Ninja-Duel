@@ -1,22 +1,14 @@
 #pragma once
 
-/**
- * Game Class
-*/
 class Game
 {
 
 public:
 
+    Game();
+    ~Game();
+
     // starts Game container
     void start();
-
-private:
-
-    // start-of-program initialization
-    void init();
-
-    // end-of-program cleanup
-    void clean();
 
 };
