@@ -1,3 +1,4 @@
+#include "defines.h"
 #include "engine.h"
 
 #include <graphx.h>
@@ -14,7 +15,6 @@ void Engine::run()
 bool Engine::step() 
 {
     m_input.poll();
-
     m_animation.update();
     
     return !quit();
@@ -32,12 +32,11 @@ void Engine::draw() const
 
 bool Engine::quit() const
 {
-    // currently set to just pressing clear
-    return m_input.getKey(KEY_CLEAR);
+    return m_input.getKeyState(KEY_CLEAR);
 }
 
 void Engine::limitFps()
 {
-    while(clock() - m_last_clock < CLOCKS_PER_SEC / 4);
+    while(clock() - m_last_clock < CLOCKS_PER_SEC / TARGET_FRAMERATE);
     m_last_clock = clock();
 }

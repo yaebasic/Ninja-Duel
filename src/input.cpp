@@ -4,8 +4,7 @@
 
 void Input::poll()
 {
-    // kb_Data[] maps to keypad register offsets
-    // register map can be found in toolchain wiki
+    // kb_Data[] maps to fixed keypad register offsets
 
     m_keys[KEY_UP]    = (kb_Data[7] & kb_Up);
     m_keys[KEY_DOWN]  = (kb_Data[7] & kb_Down);
@@ -18,7 +17,7 @@ void Input::poll()
     m_keys[KEY_CLEAR] = (kb_Data[6] & kb_Clear);
 }
 
-bool Input::getKey(enum Keys key) const
+bool Input::getKeyState(enum Keys key) const
 {
     return m_keys[key];
 }

@@ -8,7 +8,6 @@ public:
     Game();
     ~Game();
 
-    // starts Game container
     void start();
 
 };

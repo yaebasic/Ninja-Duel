@@ -4,7 +4,7 @@ Ninja Duel is a fighting game programmed from scratch in C using the CE developm
 ## Build Instructions
 To build Ninja Duel, make sure to have the latest [CE C Toolchain](https://github.com/CE-Programming/toolchain/releases/latest) installed.
 
-Then simply clone or download the repository from above, and run the following in the terminal:
+Then simply clone or download the repository from above. Open terminal and run:
 
     make
     make gfx
